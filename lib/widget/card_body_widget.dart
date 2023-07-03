@@ -4,10 +4,12 @@ import 'package:confirm_dialog/confirm_dialog.dart';
 class CardBody extends StatelessWidget {
   CardBody({
     super.key,
+    required this.index,
     required this.item,
     required this.handleDelete,
   });
 
+  var index;
   var item;
   final Function handleDelete;
 
@@ -18,7 +20,9 @@ class CardBody extends StatelessWidget {
       width: double.infinity,
       height: 74,
       decoration: BoxDecoration(
-          color: const Color(0xffDFDFDF),
+          color: (index % 2 == 0)
+              ? const Color.fromARGB(255, 138, 231, 241)
+              : const Color.fromARGB(255, 230, 151, 236),
           borderRadius: BorderRadius.circular(20)),
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),
